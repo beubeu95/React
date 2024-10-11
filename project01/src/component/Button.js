@@ -11,13 +11,14 @@ const Colors = {
     OPERATOR: ['#f59e0b', '#b45309'],
 }
 
-const Button = ({title, onPress, buttonType}) => {
+const Button = ({title, onPress, buttonType, buttonStyle}) => {
     return <Pressable
             onPress = { onPress }
             style = {({ pressed }) => [
                 styles.button,
                 { backgroundColor : Colors[buttonType][0] },
-                pressed && { backgroundColor : Colors[buttonType][1]}
+                pressed && { backgroundColor : Colors[buttonType][1]},
+                buttonStyle
             ]}
             >
                 <Text style={styles.title}>{title}</Text>
@@ -26,7 +27,7 @@ const Button = ({title, onPress, buttonType}) => {
 
 Button.propTypes = {
 	title : PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
+    onPress: PropTypes.func.isRequired,
 } 
 
 Button.defaultProps = {
@@ -36,15 +37,13 @@ Button.defaultProps = {
 
 const styles = StyleSheet.create({
     button : {
-        fontSize : 50,
-        width : 100,
-        height : 100,
         alignItems : 'center',
-        marginBottom : 10,
         justifyContent : 'center'
     },
     title : {
         fontSize : 50,
+        color : '#fff'
     }
 });
+
 export default Button;
