@@ -1,12 +1,13 @@
-import { KeyboardAvoidingView, StyleSheet, Pressable } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Pressable, Keyboard, Platform } from "react-native";
 import PropTypes from "prop-types";
 
 const SafeInputView = ({children}) => {
     return(
         <KeyboardAvoidingView
             style={styles.avoid}
+            behavior={Platform.select({ ios: 'padding' })}
         >
-            <Pressable style={styles.avoid}>
+            <Pressable style={styles.avoid} onPress={() => Keyboard.dismiss()}>
                 {children}
             </Pressable>
         </KeyboardAvoidingView>
