@@ -1,23 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import SignInScreen from './screens/SigninScreen';
+import Login from './screen/Login';
+import { WHITE } from './colors';
 
-const App = () => {
-    return (
-        <View style={styles.container}>
-            <StatusBar style="dark" />
-            {/* <Text style={{fontSize : 50}}>TODO LIST</Text> */}
-            <SignInScreen />
-        </View>
-      );
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <Login />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-   
+    backgroundColor: WHITE,
   },
 });
-
-export default App;

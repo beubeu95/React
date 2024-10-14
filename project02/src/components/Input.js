@@ -1,39 +1,40 @@
 import { StyleSheet, View, Text, TextInput} from 'react-native';
 import PropTypes from 'prop-types';
+import {GRAY} from '../colors';
 
 const Input = ({title, placeholder}) => {
     return(
-        <View style = {styles.container}>
-            <Text style={styles.title}>{title}</Text>
-
+        <View style={styles.container}>
+            <Text style={styles.text}>
+                {title}
+            </Text>
             <TextInput 
-                style={styles.input}
-                placeholder={placeholder ?? title}
-                placeholderTextColor={'#a3a3a3'}
+                style={styles.textInput}
+                placeholder={placeholder}
             />
         </View>
     );
 }
 
-Input.PropTypes = {
-    title : PropTypes.string,
-    placeholder : PropTypes.string
+Input.propTypes = {
+    title: PropTypes.string,
+    placeholder: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
     container : {
-        width :'100%',
-        paddingHorizontal : 20,
+        width : '100%',
         marginVertical : 10
     },
-    title : {
-        marginBottom : 4,
+    text : {
+        marginBottom: 4,
     },
-    input : {
+    textInput : {
         borderWidth : 1,
         borderRadius : 8,
-        paddingHorizontal : 20,
-        height : 42
+        borderColor : GRAY.DEFAULT,
+        height : 40,
+        paddingHorizontal : 10
     }
 });
 
