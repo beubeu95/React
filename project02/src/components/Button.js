@@ -1,8 +1,8 @@
-import { Pressable, Text, StyleSheet } from "react-native";
-import { PRIMARY } from "../colors";
+import { Pressable, Text, StyleSheet, ActivityIndicator } from "react-native";
+import { PRIMARY, WHITE, GRAY } from "../colors";
 import PropTypes from "prop-types";
 
-const Button = ({title, onPress, disabled}) => {
+const Button = ({title, onPress, disabled, isLoading}) => {
     return(
         <Pressable
             onPress={onPress}

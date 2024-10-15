@@ -14,7 +14,7 @@ const SafeInputView = ({children}) => {
     );
 };
 
-SafeInputView.PropTypes = {
+SafeInputView.propTypes = {
     children : PropTypes.node,
 }
 

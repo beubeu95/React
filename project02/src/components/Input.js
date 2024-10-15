@@ -70,12 +70,12 @@ Input.defaultProps = {
     returnKeyType: ReturnKeyTypes.DONE,
 };
 
-Input.PropTypes = {
-    title: PropTypes.string,
-    placeholder: PropTypes.string,
-    value: PropTypes.string,
-    iconName : PropTypes.oneOf(Object.values(Icons))
-};
+// Input.propTypes = {
+//     title: PropTypes.string,
+//     placeholder: PropTypes.string,
+//     value: PropTypes.string,
+//     iconName : PropTypes.oneOf(Object.values(Icons))
+// };
 
 const styles = StyleSheet.create({
     container : {

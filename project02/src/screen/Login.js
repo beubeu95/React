@@ -1,10 +1,12 @@
-import { View, StyleSheet , Image} from 'react-native';
+import { View, StyleSheet , Image, Keyboard} from 'react-native';
 import { useState, useRef, useEffect } from 'react';
 import SafeInputView from '../components/SafeInputView';
 import Input, { KeyboardTypes, ReturnKeyTypes, Icons } from '../components/Input';
 import Button from '../components/Button';
+import { signIn } from '../api/auth';
+import PropTypes from 'prop-types';
 
-const Login = () => {
+const Login = ({navigation, route}) => {
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,6 +26,7 @@ const Login = () => {
           try {
             const data = await signIn(email, password);
             console.log(data);
+            navigation.push('List')
           } catch (e) {
             console.log(e);
           }
@@ -65,6 +68,10 @@ const Login = () => {
         </SafeInputView>
     );
 }
+
+Login.propTypes = {
+   navigation: PropTypes.object,
+};
 
 const styles = StyleSheet.create({
     container : {
